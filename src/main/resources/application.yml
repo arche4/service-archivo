@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    platform: postgres
+    url: jdbc:postgresql://hitggrvfhfvzrs:f977b5dbc4fe47f55235231aec158f883c4767837a5c88c4a8a4ee46d886953a@ec2-3-222-150-253.compute-1.amazonaws.com:5432/dmf3u3q8n81e6
+    username: hitggrvfhfvzrs
+    password: f977b5dbc4fe47f55235231aec158f883c4767837a5c88c4a8a4ee46d886953a
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    ##show-sql: true
+server:
+  port: 9080
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+    context-path: /api/
+logging:
+  level:
+    # Hides HHH000424: Disabling contextual LOB creation as createClob() method threw error
+    org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: DEBUG
+
+    ## File Storage Properties
+    # All files uploaded through the REST API will be stored in this directory
+file:
+  #upload-dir: upload-dir
+  upload-dir: /Users/manue/Desktop/Archivos/gestion-proyectos-poli/upload-dir
+
